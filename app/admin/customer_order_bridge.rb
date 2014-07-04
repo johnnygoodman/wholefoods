@@ -1,4 +1,5 @@
 ActiveAdmin.register CustomerOrderBridge do
+  permit_params 
 
   
   # See permitted parameters documentation:
