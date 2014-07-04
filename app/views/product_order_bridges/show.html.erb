@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @product_order_bridge.order %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @product_order_bridge.product %>
+</p>
+
+<%= link_to 'Edit', edit_product_order_bridge_path(@product_order_bridge) %> |
+<%= link_to 'Back', product_order_bridges_path %>

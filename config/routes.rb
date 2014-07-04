@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :product_order_bridges
+
   resources :customer_order_bridges
 
   resources :products
