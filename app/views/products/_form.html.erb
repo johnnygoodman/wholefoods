@@ -1,0 +1,15 @@
+<%= simple_form_for(@product) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :plu %>
+    <%= f.input :organic %>
+    <%= f.input :brand_substitution %>
+    <%= f.input :organic_substitution %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
