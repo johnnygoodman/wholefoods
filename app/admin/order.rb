@@ -1,4 +1,5 @@
 ActiveAdmin.register Order do
+  permit_params :order_date, :requested_delivery_date, :phone, :email, :street_address, :delivery_instructions
 
   
   # See permitted parameters documentation:
