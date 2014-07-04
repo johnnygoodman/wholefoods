@@ -1,4 +1,5 @@
 ActiveAdmin.register Product do
+  permit_params :name, :plu, :organic, :brand_substitution, :organic_substitution
 
   
   # See permitted parameters documentation:
