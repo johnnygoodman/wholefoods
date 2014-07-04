@@ -1,15 +1,40 @@
-<%= simple_form_for(@product) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :plu %>
-    <%= f.input :organic %>
-    <%= f.input :brand_substitution %>
-    <%= f.input :organic_substitution %>
+<%= form_for @product, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :plu, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :plu, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :organic, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :organic, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :brand_substitution, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :brand_substitution, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :organic_substitution, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :organic_substitution, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  products_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
