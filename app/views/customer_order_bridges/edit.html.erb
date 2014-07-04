@@ -1,6 +1,5 @@
-<h1>Editing customer_order_bridge</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @customer_order_bridge %> |
-<%= link_to 'Back', customer_order_bridges_path %>
+<%- model_class = CustomerOrderBridge -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => CustomerOrderBridge %></h1>
+</div>
+<%= render :partial => 'form' %>

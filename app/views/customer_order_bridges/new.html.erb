@@ -1,5 +1,6 @@
-<h1>New customer_order_bridge</h1>
+<%- model_class = CustomerOrderBridge -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => CustomerOrderBridge %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', customer_order_bridges_path %>

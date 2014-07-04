@@ -1,27 +1,34 @@
-<h1>Listing customer_order_bridges</h1>
-
-<table>
+<%- model_class = CustomerOrderBridge -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => CustomerOrderBridge %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Order</th>
-      <th>Customer</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @customer_order_bridges.each do |customer_order_bridge| %>
       <tr>
-        <td><%= customer_order_bridge.order %></td>
-        <td><%= customer_order_bridge.customer %></td>
-        <td><%= link_to 'Show', customer_order_bridge %></td>
-        <td><%= link_to 'Edit', edit_customer_order_bridge_path(customer_order_bridge) %></td>
-        <td><%= link_to 'Destroy', customer_order_bridge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= customer_order_bridge.id %></td>
+        <td><%=l customer_order_bridge.created_at, format: :long %></td>
+        <td>
+          <%= link_to customer_order_bridge_path(customer_order_bridge), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to customer_order_bridge_path(customer_order_bridge), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Customer order bridge', new_customer_order_bridge_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_customer_order_bridge_path,
+            :class => 'btn btn-primary' %>
