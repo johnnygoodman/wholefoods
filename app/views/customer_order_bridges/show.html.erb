@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @customer_order_bridge.order %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @customer_order_bridge.customer %>
+</p>
+
+<%= link_to 'Edit', edit_customer_order_bridge_path(@customer_order_bridge) %> |
+<%= link_to 'Back', customer_order_bridges_path %>

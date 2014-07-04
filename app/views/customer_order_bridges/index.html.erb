@@ -1,0 +1,27 @@
+<h1>Listing customer_order_bridges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Customer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customer_order_bridges.each do |customer_order_bridge| %>
+      <tr>
+        <td><%= customer_order_bridge.order %></td>
+        <td><%= customer_order_bridge.customer %></td>
+        <td><%= link_to 'Show', customer_order_bridge %></td>
+        <td><%= link_to 'Edit', edit_customer_order_bridge_path(customer_order_bridge) %></td>
+        <td><%= link_to 'Destroy', customer_order_bridge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer order bridge', new_customer_order_bridge_path %>
